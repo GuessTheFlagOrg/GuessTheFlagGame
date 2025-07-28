@@ -367,6 +367,9 @@ namespace GuessTheFlagGame
             lblTurn.Text = $"Player {currentPlayer}'s turn";
             lblTurn.ForeColor = Color.Green;
 
+            SoundPlayer player = new SoundPlayer("gamestart.wav");
+            player.Play();
+
             btnRestart.Visible = false;
 
             GenerateQuestions(); // reload questions

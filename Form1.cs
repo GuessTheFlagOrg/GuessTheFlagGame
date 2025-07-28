@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Media;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -11,22 +12,8 @@ namespace GuessTheFlagGame
             InitializeComponent();
         }
 
-        private void btnStartGame_Click_1(object sender, EventArgs e)
-        {
-            string player1Name = txtPlayer1Name.Text.Trim();
-            string player2Name = txtPlayer2Name.Text.Trim();
+    
 
-            if (string.IsNullOrWhiteSpace(player1Name) || string.IsNullOrWhiteSpace(player2Name))
-            {
-                MessageBox.Show("Please enter both player names!", "Missing Name", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            GameForm gameForm = new GameForm(player1Name, player2Name);
-            this.Hide();
-            gameForm.FormClosed += (s, args) => this.Close();
-            gameForm.Show();
-        }
 
         private void lblTitle_Click(object sender, EventArgs e)
         {
@@ -37,29 +24,22 @@ namespace GuessTheFlagGame
         {
 
             this.BackColor = Color.White;
-            StyleLabels();
+            
             StyleTextBoxes();
             StyleButtons();
         }
 
-        private void StyleLabels()
-        {
-            lblPlayer1.Font = new Font("Segoe UI", 10F);
-            lblPlayer1.ForeColor = Color.DarkSlateGray;
 
-            lblPlayer2.Font = new Font("Segoe UI", 10F);
-            lblPlayer2.ForeColor = Color.DarkSlateGray;
-        }
 
         private void StyleTextBoxes()
         {
-            txtPlayer1Name.Font = new Font("Segoe UI", 10F);
-            txtPlayer1Name.BackColor = Color.WhiteSmoke;
-            txtPlayer1Name.ForeColor = Color.Black;
+            txtPlayer1.Font = new Font("Segoe UI", 10F);
+            txtPlayer1.BackColor = Color.WhiteSmoke;
+            txtPlayer1.ForeColor = Color.Black;
 
-            txtPlayer2Name.Font = new Font("Segoe UI", 10F);
-            txtPlayer2Name.BackColor = Color.WhiteSmoke;
-            txtPlayer2Name.ForeColor = Color.Black;
+            txtPlayer2.Font = new Font("Segoe UI", 10F);
+            txtPlayer2.BackColor = Color.WhiteSmoke;
+            txtPlayer2.ForeColor = Color.Black;
         }
 
         private void StyleButtons()
@@ -72,7 +52,30 @@ namespace GuessTheFlagGame
             btnStartGame.Cursor = Cursors.Hand;
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void btnStartGame_Click_1(object sender, EventArgs e)
+        {
+            string player1 = txtPlayer1.Text.Trim();
+            string player2 = txtPlayer2.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(player1) || string.IsNullOrWhiteSpace(player2))
+            {
+                MessageBox.Show("Please enter both player names.", "Missing Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            SoundPlayer player = new SoundPlayer("gamestart.wav");
+            player.Play(); // or .PlaySync() if you want to wait
+
+
+            GameForm gameForm = new GameForm(player1, player2);
+            gameForm.Show();
+            this.Hide(); // Optional: hides the start screen
+        }
     }
 
 }

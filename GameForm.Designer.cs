@@ -198,7 +198,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GameForm";
-            this.Text = "GuessTheFlagGame";
+            this.Text = "World Flag Challenge";
             this.Load += new System.EventHandler(this.GameForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

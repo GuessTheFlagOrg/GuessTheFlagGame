@@ -30,109 +30,106 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtPlayer2Name = new System.Windows.Forms.TextBox();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.lblPlayer1 = new System.Windows.Forms.Label();
-            this.lblPlayer2 = new System.Windows.Forms.Label();
-            this.txtPlayer1Name = new System.Windows.Forms.TextBox();
+            this.txtPlayer2 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtPlayer1 = new System.Windows.Forms.TextBox();
             this.btnStartGame = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.txtPlayer2Name, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.lblTitle, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblPlayer1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblPlayer2, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txtPlayer1Name, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.btnStartGame, 0, 5);
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.txtPlayer2, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtPlayer1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnStartGame, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 170F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 87F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.05839F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.54745F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.39417F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 549);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // txtPlayer2Name
+            // txtPlayer2
             // 
-            this.txtPlayer2Name.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPlayer2Name.Location = new System.Drawing.Point(3, 362);
-            this.txtPlayer2Name.Name = "txtPlayer2Name";
-            this.txtPlayer2Name.Size = new System.Drawing.Size(794, 26);
-            this.txtPlayer2Name.TabIndex = 4;
+            this.txtPlayer2.BackColor = System.Drawing.Color.White;
+            this.txtPlayer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPlayer2.Font = new System.Drawing.Font("Segoe Fluent Icons", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPlayer2.Location = new System.Drawing.Point(403, 82);
+            this.txtPlayer2.Name = "txtPlayer2";
+            this.txtPlayer2.Size = new System.Drawing.Size(394, 39);
+            this.txtPlayer2.TabIndex = 3;
             // 
-            // lblTitle
+            // label1
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTitle.Font = new System.Drawing.Font("Comic Sans MS", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.ForestGreen;
-            this.lblTitle.Location = new System.Drawing.Point(3, 0);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(794, 170);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Battle of the Flags – 2 Player Challenge!";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Segoe Fluent Icons", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(394, 79);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Enter Challenger 1\'s Name:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblPlayer1
+            // label2
             // 
-            this.lblPlayer1.AutoSize = true;
-            this.lblPlayer1.Location = new System.Drawing.Point(3, 170);
-            this.lblPlayer1.Name = "lblPlayer1";
-            this.lblPlayer1.Size = new System.Drawing.Size(202, 20);
-            this.lblPlayer1.TabIndex = 1;
-            this.lblPlayer1.Text = "Enter Challenger 1\'s Name:";
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Segoe Fluent Icons", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(403, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(394, 79);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Enter Challenger 2\'s Name:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblPlayer2
+            // txtPlayer1
             // 
-            this.lblPlayer2.AutoSize = true;
-            this.lblPlayer2.Location = new System.Drawing.Point(3, 323);
-            this.lblPlayer2.Name = "lblPlayer2";
-            this.lblPlayer2.Size = new System.Drawing.Size(202, 20);
-            this.lblPlayer2.TabIndex = 2;
-            this.lblPlayer2.Text = "Enter Challenger 2\'s Name:";
-            // 
-            // txtPlayer1Name
-            // 
-            this.txtPlayer1Name.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPlayer1Name.Location = new System.Drawing.Point(3, 239);
-            this.txtPlayer1Name.Name = "txtPlayer1Name";
-            this.txtPlayer1Name.Size = new System.Drawing.Size(794, 26);
-            this.txtPlayer1Name.TabIndex = 3;
+            this.txtPlayer1.BackColor = System.Drawing.Color.White;
+            this.txtPlayer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPlayer1.Font = new System.Drawing.Font("Segoe Fluent Icons", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPlayer1.Location = new System.Drawing.Point(3, 82);
+            this.txtPlayer1.Name = "txtPlayer1";
+            this.txtPlayer1.Size = new System.Drawing.Size(394, 39);
+            this.txtPlayer1.TabIndex = 2;
             // 
             // btnStartGame
             // 
-            this.btnStartGame.BackColor = System.Drawing.Color.Lime;
+            this.tableLayoutPanel1.SetColumnSpan(this.btnStartGame, 2);
             this.btnStartGame.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnStartGame.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnStartGame.Location = new System.Drawing.Point(3, 482);
+            this.btnStartGame.Location = new System.Drawing.Point(3, 497);
             this.btnStartGame.Name = "btnStartGame";
-            this.btnStartGame.Size = new System.Drawing.Size(794, 64);
-            this.btnStartGame.TabIndex = 5;
+            this.btnStartGame.Size = new System.Drawing.Size(794, 49);
+            this.btnStartGame.TabIndex = 4;
             this.btnStartGame.Text = "Start Game";
-            this.btnStartGame.UseVisualStyleBackColor = false;
+            this.btnStartGame.UseVisualStyleBackColor = true;
             this.btnStartGame.Click += new System.EventHandler(this.btnStartGame_Click_1);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::GuessTheFlagGame.Properties.Resources.Image_Jul_27__2025__09_35_06_PM;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 549);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "GuessTheFlagGame";
+            this.Text = "World Flag Challenge";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -143,11 +140,10 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.TextBox txtPlayer2Name;
-        private System.Windows.Forms.Label lblPlayer1;
-        private System.Windows.Forms.Label lblPlayer2;
-        private System.Windows.Forms.TextBox txtPlayer1Name;
+        private System.Windows.Forms.TextBox txtPlayer2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtPlayer1;
         private System.Windows.Forms.Button btnStartGame;
     }
 }
