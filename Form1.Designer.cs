@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtPlayer1 = new System.Windows.Forms.TextBox();
             this.btnStartGame = new System.Windows.Forms.Button();
+            this.btnHowToPlay = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,6 +50,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtPlayer1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnStartGame, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btnHowToPlay, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -118,6 +120,19 @@
             this.btnStartGame.UseVisualStyleBackColor = true;
             this.btnStartGame.Click += new System.EventHandler(this.btnStartGame_Click_1);
             // 
+            // btnHowToPlay
+            // 
+            this.btnHowToPlay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnHowToPlay.Font = new System.Drawing.Font("Segoe UI Variable Text", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHowToPlay.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnHowToPlay.Location = new System.Drawing.Point(3, 452);
+            this.btnHowToPlay.Name = "btnHowToPlay";
+            this.btnHowToPlay.Size = new System.Drawing.Size(212, 39);
+            this.btnHowToPlay.TabIndex = 5;
+            this.btnHowToPlay.Text = "How to Play";
+            this.btnHowToPlay.UseVisualStyleBackColor = true;
+            this.btnHowToPlay.Click += new System.EventHandler(this.btnHowToPlay_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -129,6 +144,7 @@
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "World Flag Challenge";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -145,6 +161,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPlayer1;
         private System.Windows.Forms.Button btnStartGame;
+        private System.Windows.Forms.Button btnHowToPlay;
     }
 }
 

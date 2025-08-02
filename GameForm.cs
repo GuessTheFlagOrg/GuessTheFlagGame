@@ -10,6 +10,7 @@ namespace GuessTheFlagGame
 {
     public partial class GameForm : Form
     {
+        // Constructor to initialize form and timer
         public GameForm(string p1, string p2)
         {
             InitializeComponent();
@@ -40,6 +41,7 @@ namespace GuessTheFlagGame
         int scorePlayer2 = 0;
         Random random = new Random();
 
+        // Button click handlers for answer options
         private void btnOption1_Click(object sender, EventArgs e) => CheckAnswer(btnOption1.Text);
         private void btnOption2_Click(object sender, EventArgs e) => CheckAnswer(btnOption2.Text);
         private void btnOption3_Click(object sender, EventArgs e) => CheckAnswer(btnOption3.Text);
@@ -47,6 +49,7 @@ namespace GuessTheFlagGame
 
 
 
+        // Form load: initialize game state, styles, and timer
         private void GameForm_Load(object sender, EventArgs e)
         {
 
@@ -74,7 +77,7 @@ namespace GuessTheFlagGame
 
             ShowQuestion();
         }
-
+        // Style only timer label
         private void StyleLabels()
         {
             lblTimer.Font = new Font("Segoe UI", 10F, FontStyle.Italic);
@@ -86,7 +89,7 @@ namespace GuessTheFlagGame
         }
 
 
-
+        // Generate 10 randomized questions with flags and options
         void GenerateQuestions()
         {
             string flagsPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "flags");
@@ -127,7 +130,7 @@ namespace GuessTheFlagGame
             questions = questions.OrderBy(q => random.Next()).ToList();
         }
 
-
+        // Convert country code to English country name
         string ConvertCodeToName(string code)
         {
             // Try converting 2-letter ISO code to full name
@@ -151,6 +154,7 @@ namespace GuessTheFlagGame
 
 
 
+        // Display current question with image and options
         void ShowQuestion()
         {
             var q = questions[currentIndex];
@@ -173,7 +177,7 @@ namespace GuessTheFlagGame
             ResetButtonColors();
         }
 
-
+        // Style all buttons uniformly
         private void StyleButtons()
         {
             foreach (Control ctrl in this.Controls)
@@ -189,7 +193,7 @@ namespace GuessTheFlagGame
             }
         }
 
-
+        // Reset the button background colors to default
         private void ResetButtonColors()
         {
             btnOption1.BackColor = SystemColors.Control;
@@ -197,7 +201,7 @@ namespace GuessTheFlagGame
             btnOption3.BackColor = SystemColors.Control;
             btnOption4.BackColor = SystemColors.Control;
         }
-
+        // Move to next question or finish game if done
         private void ProceedToNextQuestion()
         {
             currentIndex++;
@@ -218,13 +222,14 @@ namespace GuessTheFlagGame
             ShowQuestion();
         }
 
+        // Update score labels for both players
         private void UpdateScoreLabels()
         {
             lblPlayer1Score.Text = $"{player1Name}: {scorePlayer1}";
             lblPlayer2Score.Text = $"{player2Name}: {scorePlayer2}";
         }
 
-
+        // Disable all answer option buttons
         private void DisableAllButtons()
         {
             btnOption1.Enabled = false;
@@ -233,7 +238,7 @@ namespace GuessTheFlagGame
             btnOption4.Enabled = false;
         }
 
-
+        // Check selected answer, update score, and handle win condition
         private void CheckAnswer(string selectedAnswer)
         {
             string correctAnswer = questions[currentIndex].CorrectAnswer;
@@ -272,7 +277,7 @@ namespace GuessTheFlagGame
             currentPlayer = (currentPlayer == 1) ? 2 : 1;
             ShowQuestion();
         }
-
+        // Play laugh sound on wrong answer
         private void PlayLaughSound()
         {
             string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "laugh.wav");
@@ -289,7 +294,7 @@ namespace GuessTheFlagGame
         }
 
 
-
+        // Countdown timer tick logic and move to next question on timeout
         private void QuestionTimer_Tick(object sender, EventArgs e)
         {
             timeLeft--;
@@ -323,7 +328,7 @@ namespace GuessTheFlagGame
         }
 
 
-
+        // Style player labels and turn indicator
         private void StyleGameLabels()
         {
             lblPlayer1Score.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
@@ -354,7 +359,7 @@ namespace GuessTheFlagGame
 
 
 
-
+        // Restart button click: reset game state and reload questions
         private void btnRestart_Click(object sender, EventArgs e)
         {
             currentIndex = 0;
@@ -385,7 +390,7 @@ namespace GuessTheFlagGame
 
 
 
-
+        // Show final winner message and disable gameplay
 
         private void ShowWinner()
         {
@@ -413,6 +418,7 @@ namespace GuessTheFlagGame
             lblTimer.Text = "";
         }
 
+        // Play music when game is won
         private void PlayWinnerMusic()
         {
             string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "winner.wav");

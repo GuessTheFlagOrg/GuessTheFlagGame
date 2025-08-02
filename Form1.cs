@@ -30,7 +30,7 @@ namespace GuessTheFlagGame
         }
 
 
-
+        //for textbox styling
         private void StyleTextBoxes()
         {
             txtPlayer1.Font = new Font("Segoe UI", 10F);
@@ -42,6 +42,7 @@ namespace GuessTheFlagGame
             txtPlayer2.ForeColor = Color.Black;
         }
 
+        //for button styles
         private void StyleButtons()
         {
             btnStartGame.BackColor = Color.MediumSeaGreen;
@@ -57,6 +58,7 @@ namespace GuessTheFlagGame
 
         }
 
+        //method to start a game by clicking start button
         private void btnStartGame_Click_1(object sender, EventArgs e)
         {
             string player1 = txtPlayer1.Text.Trim();
@@ -75,6 +77,23 @@ namespace GuessTheFlagGame
             GameForm gameForm = new GameForm(player1, player2);
             gameForm.Show();
             this.Hide(); // Optional: hides the start screen
+        }
+
+        //To show user how to ply game
+        private void btnHowToPlay_Click(object sender, EventArgs e)
+        {
+
+            string helpText = "🌍 World Flag Challenge - How to Play 🌍\n\n"
+            + "1. Enter names for Player 1 and Player 2.\n"
+            + "2. Click 'Start Game' to begin.\n"
+            + "3. A flag appears with 4 country name choices.\n"
+            + "4. Players take turns guessing the correct country.\n"
+            + "5. Each correct answer earns 1 point.\n"
+            + "6. First to reach 4 points or highest score after 10 questions wins.\n"
+            + "7. Click 'Restart' to play again.\n\n"
+            + "Good luck and have fun! 🏁";
+
+            MessageBox.Show(helpText, "How to Play", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 
